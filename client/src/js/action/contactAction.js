@@ -1,9 +1,9 @@
 import axios from "axios";
-import {GET_CONTACTS} from "../const/actionType"
+import {GET_CONTACTS, SET_LOADING,} from "../const/actionType"
 
 //add contact
 export const addContact=(newContact)=> async (dispatch)=>{
- 
+  dispatch(setLoading());
     try {
       const options = {
         headers: {
@@ -20,7 +20,7 @@ export const addContact=(newContact)=> async (dispatch)=>{
   };
    //get contact
    export const getContacts = () => async (dispatch) => {
-    
+    dispatch(setLoading());
     try {
       const options = {
         headers: {
@@ -39,7 +39,7 @@ export const addContact=(newContact)=> async (dispatch)=>{
   };
   // delete contact
   export const  deleteContact = id => dispatch => {
-   
+    dispatch(setLoading());
     try {
       const options = {
         headers: {
@@ -62,7 +62,7 @@ export const addContact=(newContact)=> async (dispatch)=>{
     };
     // edit conttact
     export const editContact=(id ,updateContact)=>dispatch=>{
-      
+      dispatch(setLoading()); 
     try {
       const options = {
         headers: {
@@ -78,8 +78,8 @@ export const addContact=(newContact)=> async (dispatch)=>{
       }
       };
 
-      /*const setLoading = () => (dispatch) => {
+      const setLoading = () => (dispatch) => {
         dispatch({
           type: SET_LOADING,
         });
-      };*/
+      };

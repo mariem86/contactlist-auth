@@ -7,11 +7,11 @@ import {Spinner} from "react-bootstrap"
 
 
 export default function AddContact({name,email,phone,setEmail,setPhone,setName,edit,action}) {
- /* const { isLoading } = useSelector((state) => state.contactReducer);
+  const { isLoading } = useSelector((state) => state.contactReducer. isLoading);
   //spinner
   if ( isLoading) {
     return <div><Spinner animation="grow" /></div>
-    }*/
+    }
     return (
         <div className="container contact">
         <div className="row">

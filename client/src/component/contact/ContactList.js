@@ -16,7 +16,7 @@ function ContactList () {
 
   const dispatch = useDispatch();
   const contacts = useSelector((state) => state.contactReducer.contacts);
- /* const { isLoading } = useSelector((state) => state.contactReducer);*/
+  const { isLoading } = useSelector((state) => state.contactReducer.isLoading);
   const { user } = useSelector((state) => state.authReducer);
   //get contact
   useEffect(() => {
@@ -73,9 +73,9 @@ const getPerson=(contact)=>{
 
 }
    //spinner
-  /*if (isLoading) {
+  if (isLoading) {
     return <div><Spinner animation="grow" /></div>
-    }*/
+    }
    
     return (
       <div>
